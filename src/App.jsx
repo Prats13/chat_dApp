@@ -9,7 +9,7 @@ import {
 } from "./components/Components.js";
 import { ethers } from "ethers";
 import { abi } from "./abi";
-
+import sendLogo from "./assets/send.svg";
 // Add the contract address inside the quotes
 const CONTRACT_ADDRESS = "0xDa7ce8974da73F96b37490F68291424e4461D909";
 
@@ -175,7 +175,7 @@ export function App(props) {
     : null;
 
   return (
-    <Container style={{ padding: "0px", border: "1px solid grey" }}>
+    <Container fluid style={{ padding: "0px", border: "1px solid grey" }}>
       {/* This shows the navbar with connect button */}
       <NavBar
         username={myName}
@@ -200,14 +200,26 @@ export function App(props) {
                   marginLeft: "15px",
                 }}
               >
-                <Card.Header>Chats</Card.Header>
+                <Row
+                  style={{
+                    width: "100%",
+                  }}
+                >
+                  <Col xs={6}>
+                    <Card.Header style={{ backgroundColor: "white" }}>
+                      Your Secure Chats
+                    </Card.Header>
+                  </Col>
+                  <Col>
+                    <AddNewChat
+                      myContract={myContract}
+                      addHandler={(name, publicKey) => addChat(name, publicKey)}
+                    />
+                  </Col>
+                </Row>
               </Card>
             </Row>
             {chats}
-            <AddNewChat
-              myContract={myContract}
-              addHandler={(name, publicKey) => addChat(name, publicKey)}
-            />
           </div>
         </Col>
         <Col xs={8} style={{ paddingLeft: "0px" }}>
@@ -231,7 +243,16 @@ export function App(props) {
                         getMessage(activeChat.publicKey);
                     }}
                   >
-                    Refresh
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      x="0px"
+                      y="0px"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 50 50"
+                    >
+                      <path d="M 20 4 C 15.054688 4 11 8.054688 11 13 L 11 35.5625 L 5.71875 30.28125 L 4.28125 31.71875 L 11.28125 38.71875 L 12 39.40625 L 12.71875 38.71875 L 19.71875 31.71875 L 18.28125 30.28125 L 13 35.5625 L 13 13 C 13 9.144531 16.144531 6 20 6 L 31 6 L 31 4 Z M 38 10.59375 L 37.28125 11.28125 L 30.28125 18.28125 L 31.71875 19.71875 L 37 14.4375 L 37 37 C 37 40.855469 33.855469 44 30 44 L 19 44 L 19 46 L 30 46 C 34.945313 46 39 41.945313 39 37 L 39 14.4375 L 44.28125 19.71875 L 45.71875 18.28125 L 38.71875 11.28125 Z"></path>
+                    </svg>
                   </Button>
                 </Card.Header>
               </Card>
@@ -281,7 +302,7 @@ export function App(props) {
                         document.getElementById("messageData").value = "";
                       }}
                     >
-                      Send
+                      <img src={sendLogo} alt="" width={"25px"} height={"25px"} />
                     </Button>
                   </Col>
                 </Form.Row>

@@ -4,8 +4,8 @@ import { Button, Navbar } from "react-bootstrap";
 // This component renders the Navbar of our application
 export function NavBar(props) {
   return (
-    <Navbar bg="dark" variant="dark">
-      <Navbar.Brand href="#home">Avalanche Chat App</Navbar.Brand>
+    <Navbar bg="primary" variant="dark">
+      <Navbar.Brand href="#home">Crypto Chat App</Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
         <Navbar.Text>

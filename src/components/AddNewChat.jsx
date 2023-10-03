@@ -9,13 +9,13 @@ export function AddNewChat(props) {
   const handleShow = () => setShow(true);
   return (
     <div
-      className="AddNewChat"
+      // className="AddNewChat"
       style={{
-        position: "absolute",
-        bottom: "0px",
+        // position: "absolute",
+        // bottom: "0px",
         padding: "10px 45px 0 45px",
-        margin: "0 95px 0 0",
-        width: "97%",
+        // margin: "0 95px 0 0",
+        // width: "97%",
       }}
     >
       <Button variant="success" className="mb-2" onClick={handleShow}>

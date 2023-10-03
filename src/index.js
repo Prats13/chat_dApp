@@ -3,6 +3,8 @@ import ReactDom from "react-dom";
 import { App } from "../src/App.jsx";
 
 ReactDom.render( 
-    <App /> ,
+    <div style={{overflowX:"hidden"}}>
+        <App /> 
+    </div>,
     document.getElementById('root')
 );
